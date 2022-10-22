@@ -10,7 +10,7 @@
 html,body{
     overflow-x: hidden; 
     color:black; 
-    font-family:'Opens Sans',helvetica;
+    /* font-family:'Opens Sans',helvetica; */
     height:100%; 
     width:101%; 
     margin: 0px; 
@@ -71,4 +71,19 @@ footer {
     bottom: 0;
     width: 100%;
     height: 40px;
+}
+
+.tarjetas{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.tarjeta {
+    margin-top: 100px; 
+    width: 18rem;
+}
+
+.tickets {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
 }

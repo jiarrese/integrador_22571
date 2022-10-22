@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="">
+        <nav class="navbar navbar-expand-lg  m-0 p-0 navbarheader fixed-top">
+            <div class="container">
+                <a class="navbar-brand text-white fs-4 m-0 p-0" href="../index.html">
+                    <img src="../img/codoacodo.png" alt="">Conf Bs As
+                </a>              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container-fluid collapse navbar-collapse" id="navbarNav1">
+                    <ul class="navbar-nav container-fluid justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">La conferencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link headeroption" href="../index.html#oradores">Los oradores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link headeroption" href="../index.html#lugar">El lugar y la fecha</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link headeroption" href="../index.html#conv_orador">Conviértete en orador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link compraticket" href="comprar_ticket.html">Comprar tickets</a>
+                    </li>
+                    </ul>
+                </div>            
+            </div>
+        </nav>    
+    </header>
+    <main class="container pt-5 mb-5 pb-5">
+        <div class="row mb-3 tarjetas">
+            <div class="card text-center border-primary tarjeta">
+                <div class="card-body">
+                    <h4 class="card-title">Estudiante</h5>
+                    <h5 class="card-subtitle mb-2 text-muted">Tienen un descuento</h6>
+                    <p class="card-text">80%</p>
+                    <h6 class="card-subtitle mb-2 text-muted">* presentar documentación</h6>
+                </div>
+            </div>
+            <div class="card text-center border-success tarjeta">
+                <div class="card-body">
+                    <h4 class="card-title">Trainee</h5>
+                    <h5 class="card-subtitle mb-2 text-muted">Tienen un descuento</h6>
+                    <p class="card-text">50%</p>
+                    <h6 class="card-subtitle mb-2 text-muted">* presentar documentación</h6>
+                </div>
+            </div>
+            <div class="card text-center border-warning tarjeta">
+                <div class="card-body">
+                    <h4 class="card-title">Junior</h5>
+                    <h5 class="card-subtitle mb-2 text-muted">Tienen un descuento</h6>
+                    <p class="card-text">15%</p>
+                    <h6 class="card-subtitle mb-2 text-muted">* presentar documentación</h6>
+                </div>
+            </div>
+        </div>
+        <div class="formulario" id="tickets">
+            <div class="container-xxl m-0 p-0">
+                <div class="container text-center p-2">
+                    <h6 class="card-title">VENTA</h6>
+                </div>
+                <div class="container text-center pb-2">
+                    <h2 class="card-title">VALOR DE TICKET $200</h1>
+                </div>
+                <div class="row justify-content-center pt-4">                
+                    <form class="form-floating ps-1 needs-validation" novalidate>
+                        <div class="row mb-8 justify-content-center">
+                            <div class="col-4">
+                                <input type="text" class="textcontrol form-control" id="name" placeholder="Nombre" value="">
+                                <div class="invalid-feedback">
+                                    Looks good!
+                                </div>                            
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="textcontrol form-control" id="lastname" placeholder="Apellido" value="">                            
+                            </div>
+                        </div>
+                        <div class="row mb-8 justify-content-center mt-3">
+                            <div class="col-8">
+                                <input type="email" class="textcontrol form-control" id="email" placeholder="Correo" value="">
+                            </div>
+                        </div>    
+                        <div class="row mb-8 justify-content-center mt-3">
+                            <div class="col-4">
+                                <label for="amount" class="form-label">Cantidad</label>
+                                <input type="number" min="0" step="1" class="textcontrol form-control" id="amount" placeholder="Cantidad" value="">                            
+                            </div>
+                            <div class="col-4">
+                                <label for="category" class="form-label">Categoría</label>
+                                <select id="category" class="form-select textcontrol form-control">
+                                    <option>Estudiante</option>
+                                    <option>Trainee</option>
+                                    <option>Junior</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-8 justify-content-center mt-4">
+                            <div class="col-8">
+                                <div class="alert alert-primary" role="alert">
+                                    Total a Pagar: $ <span id="totalpagar">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-8 justify-content-center mt-4">
+                            <div class="col-4 d-grid gap-2">
+                                <button class="botonenviar btn btn-secondary w-auto" type="button" id="borrar" disabled>Borrar</button>
+                            </div>
+                            <div class="col-4 d-grid gap-2">
+                                <button class="botonenviar btn btn-secondary w-auto" data-bs-toggle="modal" data-bs-target="#submitmodal" type="button" id="resumen" disabled>Resumen</button>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="submitmodal" tabindex="-1" aria-labelledby="submitmodalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="submitmodalLabel">Confirma la compra?</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <span id="infosale"></span>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="confcompra">Comprar</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <nav class="navbar navbar-expand-lg navbarfooter">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" style="justify-content: space-between; width: 100%">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Preguntas Frecuentes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Contáctanos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Prensa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Conferencias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Términos y Condiciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Privacidad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Estudiantes</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+    </footer>
+    <script src="../js/comprar.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>    
+</body>
+</html>
